@@ -10,4 +10,8 @@ app.get('/tasks', (_req, res) => {
   res.json([])
 })
 
+app.post('/tasks', (_req, res) => {
+  res.send('tasks')
+})
+
 export default app

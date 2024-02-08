@@ -23,6 +23,10 @@ describe("Check '/tasks' POST route", () => {
   // TDD (Test Driven Development)
 
   // 1. Should respond with a 200 status code
+  test('Should respond with a 200 status code', async () => {
+    const response = await request(app).post('/tasks').send()
+    expect(response.status).toBe(200)
+  })
 
   // 2. Should respond with a content-type of application/json
 
