@@ -1,0 +1,25 @@
+{
+  "name": "jest-supertest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlbertLnz/node-testing-jest-supertest.git"
+  },
+  "keywords": [
+    "Node",
+    "testing",
+    "jest",
+    "supertest"
+  ],
+  "author": "AlbertLnz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlbertLnz/node-testing-jest-supertest/issues"
+  },
+  "homepage": "https://github.com/AlbertLnz/node-testing-jest-supertest#readme"
+}
