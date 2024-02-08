@@ -17,3 +17,15 @@ describe("Check '/tasks' GET route", () => {
   })
 
 })
+
+describe("Check '/tasks' POST route", () => {
+
+  // TDD (Test Driven Development)
+
+  // 1. Should respond with a 200 status code
+
+  // 2. Should respond with a content-type of application/json
+
+  // 3. Should respond with a json object containing the new task with an id
+
+})
