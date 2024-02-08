@@ -11,7 +11,8 @@ app.get('/tasks', (_req, res) => {
 })
 
 app.post('/tasks', (_req, res) => {
-  res.send('tasks')
+  res.set('Content-Type', 'application/json');
+  res.json({})
 })
 
 export default app

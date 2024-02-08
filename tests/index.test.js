@@ -29,6 +29,14 @@ describe("Check '/tasks' POST route", () => {
   })
 
   // 2. Should respond with a content-type of application/json
+  test('Should respond with a content-type of application/json', async () => {
+    const response = await request(app).post('/tasks').send()
+    expect(response.headers['content-type']).toBe('application/json; charset=utf-8');
+    expect(response.headers['content-type']).toMatch('application/json');
+    expect(response.headers['content-type']).toEqual(
+      expect.stringContaining('json')
+    )
+  })
 
   // 3. Should respond with a json object containing the new task with an id
 
