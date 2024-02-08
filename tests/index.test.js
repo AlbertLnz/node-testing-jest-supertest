@@ -7,7 +7,7 @@ describe("Check if '/tasks' GET route exists", () => {
     const response = await request(app).get('/tasks').send()
     // console.log(response)
 
-    expect(response.statusCode).toBe(404)
+    expect(response.statusCode).toBe(200)
   })
 
 })
