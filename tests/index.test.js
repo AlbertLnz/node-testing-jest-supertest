@@ -20,30 +20,36 @@ describe("Check '/tasks' GET route", () => {
 
 describe("Check '/tasks' POST route", () => {
 
-  // TDD (Test Driven Development)
+  describe('Given a title and a description', () => {
 
-  // 1. Should respond with a 200 status code
-  test('Should respond with a 200 status code', async () => {
-    const response = await request(app).post('/tasks').send()
-    expect(response.status).toBe(200)
-  })
+    // TDD (Test Driven Development)
+    const newTask = {
+      title: 'Title task',
+      description: 'Description task'
+    }
 
-  // 2. Should respond with a content-type of application/json
-  test('Should respond with a content-type of application/json', async () => {
-    const response = await request(app).post('/tasks').send()
-    expect(response.headers['content-type']).toBe('application/json; charset=utf-8');
-    expect(response.headers['content-type']).toMatch('application/json');
-    expect(response.headers['content-type']).toEqual(
-      expect.stringContaining('json')
-    )
-  })
-
-  // 3. Should respond with a json object containing the new task with an id
-  test('Should respond with a json object containing the new task with an id', async () => {
-    const response = await request(app).post('/tasks').send({
-      title: 'test task',
-      description: 'description'
+    // 1. Should respond with a 200 status code
+    test('Should respond with a 200 status code', async () => {
+      const response = await request(app).post('/tasks').send(newTask)
+      expect(response.status).toBe(200)
     })
-    expect(response.body.id).toBeDefined()
+
+    // 2. Should respond with a content-type of application/json
+    test('Should respond with a content-type of application/json', async () => {
+      const response = await request(app).post('/tasks').send(newTask)
+      expect(response.headers['content-type']).toBe('application/json; charset=utf-8');
+      expect(response.headers['content-type']).toMatch('application/json');
+      expect(response.headers['content-type']).toEqual(
+        expect.stringContaining('json')
+      )
+    })
+
+    // 3. Should respond with a json object containing the new task with an id
+    test('Should respond with a json object containing the new task with an id', async () => {
+      const response = await request(app).post('/tasks').send(newTask)
+      expect(response.body.id).toBeDefined()
+    })
+
   })
+
 })
