@@ -39,5 +39,11 @@ describe("Check '/tasks' POST route", () => {
   })
 
   // 3. Should respond with a json object containing the new task with an id
-
+  test('Should respond with a json object containing the new task with an id', async () => {
+    const response = await request(app).post('/tasks').send({
+      title: 'test task',
+      description: 'description'
+    })
+    expect(response.body.id).toBeDefined()
+  })
 })
