@@ -52,4 +52,13 @@ describe("Check '/tasks' POST route", () => {
 
   })
 
+  describe('Not given a title and a description', () => {
+
+    test('Should respond with a 400 status code', async () => {
+      const response = await request(app).post('/tasks').send({})
+      expect(response.statusCode).toBe(400)
+    })
+
+  })
+
 })

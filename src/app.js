@@ -19,6 +19,8 @@ app.post('/tasks', (req, res) => {
 
   const { title, description } = req.body
 
+  if(!title || !description) return res.sendStatus(400).send('Bad Request')
+
   res.json({
     id: v4(), title, description
   })
