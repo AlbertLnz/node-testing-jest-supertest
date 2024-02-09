@@ -59,6 +59,19 @@ describe("Check '/tasks' POST route", () => {
       expect(response.statusCode).toBe(400)
     })
 
+    test('Should respond with a 400 status code - Various options', async () => {
+      const possibilities = [
+        {}, // title & description are missing
+        { title: 'Title task'}, // description is missing
+        { description: 'Description task' } // title is missing
+      ]
+
+      for (const option of possibilities) {
+        const response = await request(app).post('/tasks').send(option)
+        expect(response.statusCode).toBe(400)
+      }
+    })
+
   })
 
 })
